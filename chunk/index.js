@@ -10,12 +10,9 @@
 
 //* Solution 1
 /* const chunk = (array, size) => {
-    let chunkedArr = [];
-
+    const chunkedArr = [];
     array.forEach((num, i) => {
-
         const last = chunkedArr[chunkedArr.length - 1];
-
         !last || last.length === size ?
             chunkedArr.push([num]) :
             last.push(num);
@@ -25,13 +22,9 @@
 
 //* Solution 2
 /* const chunk = (array, size) => {
-
     let chunkedArr = [];
-
     array.forEach((num, i) => {
-
         const last = chunkedArr[chunkedArr.length - 1];
-
         if (!last || last.length === size) {
             chunkedArr.push([num]);
         } else {
@@ -42,12 +35,12 @@
 }; */
 
 //* Solution 3
-const chunk = (array, size) => {
+/* const chunk = (array, size) => {
 
-    let chunkedArr = [];
+    const chunkedArr = [];
 
     for (num of array) {
-        let last = chunkedArr[chunkedArr.length - 1];
+        const last = chunkedArr[chunkedArr.length - 1];
         // could replace if statement with ternary operator
         if(!last || last.length === size) {
             chunkedArr.push([num]);
@@ -56,6 +49,25 @@ const chunk = (array, size) => {
         }
     }
     return chunkedArr;
-};
+}; */
+
+//* Solution 4
+
+const chunk = (array, size) => {
+    const chunkedArr = [];
+    let index = 0;
+    
+    /* do {
+        chunkedArr.push(array.slice(index, index + size));
+        index += size;
+    } while (index < array.length); */
+    
+    while (index < array.length) {
+        chunkedArr.push(array.slice(index, index + size));
+        index += size;
+    };
+    
+    return chunkedArr;
+}
 
 module.exports = chunk;
