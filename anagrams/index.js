@@ -16,7 +16,6 @@
 }; */
 
 //* Solution 2 | do not compare whitespace or special chars
-
 /* const anagrams = (stringA, stringB) => {
 
     const regex = /[^\w]/g;
@@ -35,7 +34,6 @@ const cleanStr = (str) => {
 };
 
 //* Solution 4 | char map
-
 /* const anagrams = (stringA, stringB) => {
 
     const charMapA = buildCharMap(stringA);
