@@ -19,7 +19,7 @@
 }; */
 
 //* Solution 2
-const capitalize = (str) => {
+/* const capitalize = (str) => {
     const strArr = str.split(' ');
     const capArr = [];
     
@@ -27,6 +27,22 @@ const capitalize = (str) => {
         capArr.push(char[0].toUpperCase() + char.slice(1));
     };
     return capArr.join(' '); 
-};
+}; */
+
+//* Solution 3
+const capitalize = (str) => {
+    let result = str[0].toUpperCase();
+
+    for (let i = 1; i < str.length; i++) {
+        if (str[i - 1] === ' ') {
+            result += str[i].toUpperCase();
+        } else {
+            result += str[i];
+        }
+    }
+
+    return result;
+
+}
 
 module.exports = capitalize;
