@@ -25,9 +25,18 @@
 
 } */
 
-//* Solution 3 | char map
-
+//* Solution 3 | compare all chars w/ helper function
 const anagrams = (stringA, stringB) => {
+    return cleanStr(stringA) === cleanStr(stringB);
+}
+
+const cleanStr = (str) => {
+    return str.split('').sort().join('').toLowerCase();
+};
+
+//* Solution 4 | char map
+
+/* const anagrams = (stringA, stringB) => {
 
     const charMapA = buildCharMap(stringA);
     const charMapB = buildCharMap(stringB);
@@ -35,7 +44,7 @@ const anagrams = (stringA, stringB) => {
     if (Object.keys(charMapA).length !== Object.keys(charMapB).length) {
         return false;
     };
-    
+
     for (let char in charMapA) {
         if (charMapA[char] !== charMapB[char] && charMapB[char] !== charMapA[char]) {
             return false;
@@ -50,6 +59,8 @@ const buildCharMap = (str) => {
         charMap[char] = charMap[char] + 1 || 1;
     };
     return charMap;
-};
+}; */
+
+
 
 module.exports = anagrams;
