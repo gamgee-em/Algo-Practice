@@ -18,7 +18,7 @@
 //       '####'
 
 //* Solution 1 | iterative 
-/* const steps = (n) => {
+/* const steps = (n = 3) => {
     for (let i = 0; i < n; i++) {
         let stair = '';
 
@@ -35,12 +35,13 @@
 
 //* Solution 2 | recursive
 const steps = (n, row = 0, stair = '') => {
-    // set base case
+    
+    // set base case | prevent infinite loop
     if (n === row) return;
+
     if (n === stair.length) {
         console.log(stair);
         return steps(n, row + 1);
-        //return;
     };
 
     if (stair.length <= row) {
