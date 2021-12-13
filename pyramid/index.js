@@ -43,20 +43,21 @@
 const pyramid = (n, row = 0, col = 0, level = '') => {
     if (n === row) return;
 
+    // use to get mid point of string
     const mid = Math.floor((2 * n - 1) / 2);
 
-    if (2 * n  - 1 === level.length) {
+    if (level.length === 2 * n - 1) {
         console.log(level);
         return pyramid(n, row + 1);
     } 
+    
     if (mid - row <= col && mid + row >= col) {
         level += '#';
     } else {
         level += ' ';
     };
-    col++;
-    pyramid(n, row, col, level);
+    //col++;
+    pyramid(n, row, col+1, level);
 };
-
 
 module.exports = pyramid;
