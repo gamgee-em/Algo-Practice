@@ -7,7 +7,9 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-const vowels = (str) => {
+
+//* Solution 1 | iterative
+/* const vowels = (str) => {
     //create regex that matches characters aeiou case insensitive
     const regex = /[aeiou]/ig;
 
@@ -19,7 +21,24 @@ const vowels = (str) => {
             numOfVowels++;
             console.log(numOfVowels);
         }
-        
+
+    };
+    return numOfVowels;
+}; */
+
+
+//* Solution 2
+const vowels = (str) => {
+    // create regex that matches characters aeiou case insensitive
+    const regex = /[aeiou]/ig;
+    // create counter var to count # of vowels in each string
+    let numOfVowels = 0;
+    // split string into array to use for of loop
+    let strArr = str.split('');
+    // loop over each index of the strArr array
+    for(let char of strArr) {
+        // check if each index of strArr matches regex | if so increment numOfVowels by 1 | if not return current numOfVowels
+        char.match(regex) ? numOfVowels++ : numOfVowels;
     };
     return numOfVowels;
 };
