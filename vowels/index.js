@@ -7,6 +7,21 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+const vowels = (str) => {
+    //create regex that matches characters aeiou case insensitive
+    const regex = /[aeiou]/ig;
+
+    let numOfVowels = 0;
+
+    for (let i = 0; i < str.length; i++) {
+
+        if (str[i].match(regex)) {
+            numOfVowels++;
+            console.log(numOfVowels);
+        }
+        
+    };
+    return numOfVowels;
+};
 
 module.exports = vowels;
