@@ -11,7 +11,7 @@
 //* Solution 1 | iterative
 /* const vowels = (str) => {
     //create regex that matches characters aeiou case insensitive
-    const regex = /[aeiou]/ig;
+    const regex = /[aeiou]/gi;
 
     let numOfVowels = 0;
 
@@ -28,9 +28,9 @@
 
 
 //* Solution 2
-const vowels = (str) => {
+/* const vowels = (str) => {
     // create regex that matches characters aeiou case insensitive
-    const regex = /[aeiou]/ig;
+    const regex = /[aeiou]/gi;
     // create counter var to count # of vowels in each string
     let numOfVowels = 0;
     // split string into array to use for of loop
@@ -41,6 +41,11 @@ const vowels = (str) => {
         char.match(regex) ? numOfVowels++ : numOfVowels;
     };
     return numOfVowels;
+}; */
+
+const vowels = (str, counter = 0) => {
+    str.split('').forEach(char => char.match(/[aeiou]/gi) ? counter++ : counter);
+    return counter;
 };
 
 module.exports = vowels;
