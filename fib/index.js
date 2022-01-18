@@ -8,6 +8,54 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// iterative solution
+// linear runtime
+/* const fib = n => {
+    let fibArr = [0, 1];
+
+    for(let i = 2; i <= n; i++) {
+        const a = fibArr[fibArr.length - 1];
+        const b = fibArr[fibArr.length - 2];
+        fibArr.push(a + b);
+    };
+    return fibArr[n];
+}; */
+
+// recursive solution
+// exponential runtime
+
+const fib = n => {
+    if (n < 2) {
+        return n;
+    };
+
+    return fib(n - 1) + fib(n - 2);
+};
+
+//! one liner
+// const fib = n => n < 2 ? n : fib( n - 1 ) + fib( n - 2 );
+
+// memoization store results of previous function calls
+/* const memoize = fn => {
+    
+    const cache = {};
+
+    return ((...args) => {
+        if (cache[args]) return cache[args];
+        const result = fn.apply(this, args);
+        cache[args] = result;
+        return result;
+    });
+};
+
+const fib = n => {
+    if (n < 2) {
+        return n;
+    };
+
+    return fib(n - 1) + fib(n - 2)
+};
+
+fib = memoize(fib); */
 
 module.exports = fib;
