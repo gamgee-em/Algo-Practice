@@ -43,6 +43,7 @@
     return numOfVowels;
 }; */
 
+//* Solution 3
 const vowels = (str, counter = 0) => {
     str.split('').forEach(char => char.match(/[aeiou]/gi) ? counter++ : counter);
     return counter;
