@@ -11,6 +11,7 @@
 class Queue {
 
     constructor() {
+        // create data array
         this.data = [];
     };
 
