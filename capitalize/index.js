@@ -30,7 +30,7 @@
 }; */
 
 //* Solution 3
-const capitalize = (str) => {
+/* const capitalize = (str) => {
     let result = str[0].toUpperCase();
 
     for (let i = 1; i < str.length; i++) {
@@ -40,9 +40,17 @@ const capitalize = (str) => {
             result += str[i];
         }
     }
-
+    console.log(result);
     return result;
+}; */
 
-}
+//* Solution 4
+const capitalize = str => {
+
+    return str.split(' ').reduce((newStr, char) => {
+        return newStr + `${char[0].toUpperCase()}${char.slice(1)} `
+    }, '').trim();
+
+};
 
 module.exports = capitalize;

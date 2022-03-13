@@ -13,11 +13,20 @@
     return result;
 };  */
 
+let total = 0;
+
+const sum = num => {
+    
+    total += num;
+
+    sum(num - 1)
+    
+};
 
 //* constant solution O(1) where the input has no effect on runtime
-const sum = num => {
+/* const sum = num => {
     return (num / 2) * (num + 1)
-};
+}; */
 
 console.log(sum(5));
 

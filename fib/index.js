@@ -37,10 +37,11 @@ const fib = n => {
 
 //* memoization store results of previous function calls
 //! by caching previous function calls we speed up execution significantly
+// pass in the function (fn) you want to speed up
 /* const memoize = fn => {
     
     const cache = {};
-
+    // use spread operator for flexibility
     return ((...args) => {
 
         if (cache[args]) return cache[args];

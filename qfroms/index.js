@@ -26,11 +26,16 @@ class Queue {
     };
 
     remove() {
+
+        //* remove all items from first stack into second stack
        while(this.first.peek()) {
            this.second.push(this.first.pop());
        };
+
+       //* remove the record we're looking for
        const record = this.second.pop();
 
+       //* return the remaining items back to first stack
        while(this.second.peek()) {
            this.first.push(this.second.pop());
        };
@@ -38,12 +43,16 @@ class Queue {
     };
 
     peek() {
+
+        //* remove all items from first stack into second stack
         while(this.first.peek()) {
             this.second.push(this.first.pop());
         };
 
+        //* view the record we're looking for
         const record = this.second.peek();
 
+        //* return/restore all items back into second stack
         while(this.second.peek()) {
             this.first.push(this.second.pop());
         };

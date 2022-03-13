@@ -10,6 +10,7 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
+//? FILO - First in last out 
 class Stack {
 
     constructor() {
@@ -20,11 +21,11 @@ class Stack {
         return this.data.push(entry);
     }
 
-    pop(entry) {
-        return this.data.pop(entry);
+    pop() {
+        return this.data.pop();
     }
 
-    peek(entry) {
+    peek() {
         return this.data[this.data.length - 1];
     }
 
